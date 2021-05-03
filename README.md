@@ -1,4 +1,4 @@
-# client
+# Client
 ## App URL
 http://taskmanager-vue-nestjs.herokuapp.com/
 

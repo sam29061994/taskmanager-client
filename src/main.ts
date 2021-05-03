@@ -49,7 +49,6 @@ const router = createRouter({
 })
 
 router.beforeEach(function(to, from, next) {
-  console.log(from);
  if (to.meta.requiresAuth && !localStorage.getItem('access_token')) {
    next({name:'Signin'})
  } 

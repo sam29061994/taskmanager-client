@@ -1,7 +1,6 @@
 
 <template>
   <div class="login-form">
-    <h2 class="login-heading">Login</h2>
     <form action="#" @submit.prevent="login">
       <div class="form-control">
         <label for="email">Username</label>
@@ -32,17 +31,17 @@
         <button type="submit" class="btn-submit">Login</button>
       </div>
     </form>
-    <p v-if="error" class="error"> Password Incorrect. Try Again!!</p>
+    <p v-if="error" class="error">Password Incorrect. Try Again!!</p>
   </div>
 </template>
 
 
 <script>
-import { defineComponent } from 'vue';
-import axios from '../../modules/api';
+import { defineComponent } from "vue";
+import axios from "../../modules/api";
 
 export default defineComponent({
-  name: 'login',
+  name: "login",
   props: {
     routeTo: {
       type: String,
@@ -51,8 +50,8 @@ export default defineComponent({
   },
   data() {
     return {
-      username: 'Admin',
-      password: '',
+      username: "Admin",
+      password: "",
       error: false,
     };
   },
@@ -60,22 +59,20 @@ export default defineComponent({
     async login() {
       let token = null;
       try {
-        const {
-          data,
-        } = await axios.post('auth/signin', {
+        const { data } = await axios.post("auth/signin", {
           username: this.username,
           password: this.password,
         });
         token = data.token;
-      } catch(err) {
+      } catch (err) {
         this.error = true;
         return;
       }
-      localStorage.setItem('access_token', token);
+      localStorage.setItem("access_token", token);
       this.emitter.emit("user-authorized", true);
       this.$router.push(this.routeTo);
     },
-  }
+  },
 });
 </script>
 
@@ -86,7 +83,10 @@ label {
   margin-bottom: 4px;
 }
 .login-heading {
-  margin-bottom: 16px;
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  font-size:40px;
 }
 .form-control {
   margin-bottom: 24px;
@@ -120,14 +120,13 @@ label {
     background: darken(#60bd4f, 10%);
   }
 
-   @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 15px;
     padding: 10px 6px;
   }
-  
 }
 .error {
   font-size: 20px;
-  color:maroon;
+  color: maroon;
 }
 </style>

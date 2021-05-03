@@ -30,9 +30,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: 'todo-item',
+  name: "todo-item",
   props: {
     todo: {
       type: Object,
@@ -53,12 +53,12 @@ export default defineComponent({
       title: this.todo.title,
       completed: this.todo.completed || this.selectAll,
       editing: this.todo.editing,
-      cachedTitle: '',
+      cachedTitle: "",
     };
   },
   methods: {
     removeItem() {
-      this.$emit('removedItem', { index: this.index, id: this.id });
+      this.$emit("removedItem", { index: this.index, id: this.id });
     },
     editItemStart() {
       this.cachedTitle = this.title;
@@ -66,19 +66,19 @@ export default defineComponent({
     },
 
     editItemFinished() {
-      if (this.title.trim() === '') {
+      if (this.title.trim() === "") {
         this.title = this.cachedTitle;
       }
 
       this.editing = false;
-      this.$emit('editItemFinished', {
+      this.$emit("editItemFinished", {
         index: this.index,
         todo: {
           id: this.id,
           title: this.title,
           completed: this.completed,
           editing: this.editing,
-          cachedTitle: '',
+          cachedTitle: "",
         },
       });
     },
@@ -90,11 +90,7 @@ export default defineComponent({
   },
   watch: {
     selectAll() {
-      if (this.selectAll) {
-        this.completed = true;
-      } else {
-        this.completed = false;
-      }
+      this.completed = this.selectAll;
     },
   },
 });

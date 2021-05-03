@@ -12,7 +12,10 @@ header {
 }
 
 .logo {
-  height: 100px;
+  height: 50px;
+  position: absolute;
+  top:30px;
+  left:0;
 }
 
 </style>

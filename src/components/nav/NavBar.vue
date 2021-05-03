@@ -1,23 +1,25 @@
    
 <template>
   <div id="nav">
-    <router-link
-      class="links"
-      v-for="link in links"
-      :key="link.id"
-      :to="link.path"
-      >{{ link.name }}</router-link
-    >
+    <div v-if="authorized">
+      <router-link
+        class="links"
+        v-for="link in links"
+        :key="link.id"
+        :to="link.path"
+        >{{ link.name }}</router-link
+      >
+    </div>
     <Logout v-if="authorized" />
   </div>
 </template>
 
 
 <script>
-import { defineComponent } from 'vue';
-import Logout from '@/components/auth/Logout.vue';
+import { defineComponent } from "vue";
+import Logout from "@/components/auth/Logout.vue";
 export default defineComponent({
-  name: 'nav-bar',
+  name: "nav-bar",
   components: {
     Logout,
   },
@@ -33,8 +35,8 @@ export default defineComponent({
     };
   },
   mounted() {
-    this.authorized = !!localStorage.getItem('access_token');
-    this.emitter.on('user-authorized', (authorized) => {
+    this.authorized = !!localStorage.getItem("access_token");
+    this.emitter.on("user-authorized", (authorized) => {
       this.authorized = authorized;
     });
   },
@@ -44,6 +46,7 @@ export default defineComponent({
 #nav {
   padding: 30px;
   display: flex;
+  margin-left: 30px;
   align-items: center;
 
   a {

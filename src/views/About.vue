@@ -2,6 +2,8 @@
   <div class="about">
     <h3>This is a basic Task Management SPA utilizing Vue 3.0 for building the User Interface. This app is deployed on Heroku and
       communicates with a node.js server instance running on AWS Elastic Beanstalk. </h3>
+    <a href="https://github.com/sam29061994/taskmanager-client" style="margin-right:20px" target="_blank">Frontend Github Repository</a> 
+    <a href="https://github.com/sam29061994/taskmanager " target="_blank" >Backend Github Repository</a>
     <h3> Key Features: </h3>
     <ul>
       <li> User is able to Create, Read, Update (Double click on a task), Delete tasks </li>
@@ -20,11 +22,12 @@
 
     <h3>Tools Used in this app:</h3>
     <ul>
-    <li> FrontEnd: Vue 3.0, Vue Router, Mitt event emmiter, Express, Axios, etc.. </li>
-    <li> BackEnd: Nest.js, Mongoose, Passport (JWT Authentication), Bcrypt, JWT, etc..  </li>
+    <li> Frontend: Vue 3.0, Vue Router, Mitt event emmiter, Express, Axios, etc.. </li>
+    <li> Backend: Nest.js, Mongoose, Passport (JWT Authentication), Bcrypt, JWT, etc..  </li>
     </ul>
 
     <h5>API access: http://taskmanager.us-east-2.elasticbeanstalk.com/ </h5>
+ 
 
     
   </div>

@@ -116,6 +116,10 @@ export default defineComponent({
   .checkbox {
     transform: scale(1.5);
     margin-right: 15px;
+    
+    @media screen and (max-width: 600px) {
+      transform: scale(1);
+    }
   }
 
   .remove-item {

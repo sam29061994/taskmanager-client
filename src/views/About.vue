@@ -7,17 +7,17 @@
     <h3> Key Features: </h3>
     <ul>
       <li> User is able to Create, Read, Update (Double click on a task), Delete tasks </li>
-       <li> User is able to filter task by there completion status, see the count and clear the completed tasks </li>
-      <li> User authenticated by JWT and the token is saved on the local storage of the browser </li>
-      <li> The app routes are guarded, without the token user won't be able to see Home or About page</li>
+       <li> User is able to filter task by their completion status, see the count and clear the completed tasks </li>
+      <li> User is authenticated by JWT and the token is saved on local storage of the browser </li>
+      <li> The app routes are guarded, without the token, user won't be able to see Home or About page</li>
       <li> User can signin and add tasks without any additional clicks </li>
     </ul>
 
     <h3> Notes: </h3>
     <ul>
       <li> The app can be accessed only by the admin user and no other user registrations are allowed </li>
-      <li>The app does not have a pagination feature added that means all the tasks regardless of how many would be shown on a single page</li>
-      <li> Task ownership feature is not implemented as there is only one user can access this app</li>
+      <li>The app does not have a pagination feature added, that means all the tasks regardless of how many, would be shown on the Home page</li>
+      <li> Task ownership feature is not implemented as there is only one type of user who can access this app</li>
     </ul>
 
     <h3>Tools Used in this app:</h3>
